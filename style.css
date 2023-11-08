@@ -1,0 +1,234 @@
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background: #ef476f;
+  }
+  
+  .text {
+    color: #423c4f;
+   
+    font-weight: 900;
+    font-size: 40px;
+    z-index: 1;
+
+  }
+
+  
+  .text > p {
+    animation-name: text;
+    animation-duration: 1.25s;
+    transform-origin: right;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  
+  .text p:first-child {
+    animation-delay: 1s;
+  }
+  
+  .text p:last-child {
+    animation-delay: 1.5s;
+  }
+  
+  @keyframes text {
+    0% {
+      opacity: 0;
+      transform: translateX(-65%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-15%);
+    }
+  }
+  
+  .beam {
+    position: absolute;
+    display: block;
+    /* is inline element */
+    height: 8px;
+    width: 33px;
+    background: #ffd166;
+    animation-name: beam;
+    animation-duration: 1.25s;
+    transform-origin: left;
+    animation-fill-mode: forwards;
+    animation-delay: inherit;
+    opacity: 0;
+    border-radius: 5px;
+  }
+  
+  .sun .light {
+    position: absolute;
+    display: block;
+    /* is inline element */
+    height: 4px;
+    width: 40px;
+    left: 50%;
+    top: 50%;
+    transition-duration: 1s;
+    transform-origin: left;
+  }
+  
+  .sun .light1 {
+    transform: translateY(-45px) rotate(-90deg);
+    animation-delay: .3s;
+  }
+  
+  .sun .light2 {
+    transform: translateY(-30px) translateX(30px) rotate(-45deg);
+    animation-delay: .4s;
+  }
+  
+  .sun .light3 {
+    transform: translateX(45px) rotate(0deg);
+    animation-delay: .5s;
+  }
+  
+  .sun .light4 {
+    transform: translateY(30px) translateX(30px) rotate(45deg);
+    animation-delay: .6s;
+  }
+  
+  .sun .light5 {
+    transform: translateY(45px) rotate(90deg);
+    animation-delay: .7s;
+  }
+  
+  .sun .light6 {
+    transform: translateY(30px) translateX(-30px) rotate(135deg);
+  }
+  
+  .sun .light7 {
+    transform: translateX(-45px) rotate(180deg);
+    animation-delay: .1s;
+  }
+  
+  .sun .light8 {
+    transform: translateY(-30px) translateX(-30px) rotate(225deg);
+    animation-delay: .2s;
+  }
+  
+  @keyframes beam {
+    0% {
+      transform: scaleX(0) translateX(-100%)
+    }
+    100% {
+      transform: scaleX(1) translateX(0);
+      opacity: 1
+    }
+  }
+  
+  .sun {
+    width: 66px;
+    height: 66px;
+    position: relative;
+    border-radius: 100%;
+    animation-fill-mode: forwards;
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: translateX(-150%) rotate(128deg);
+      opacity: 0;
+    }
+    33% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(0) rotate(0)
+    }
+  }
+  
+  #halfclip {
+    width: 50%;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left center;
+    animation: cliprotate 1.5s steps(2);
+    transform: rotate(180deg);
+  }
+  
+  .halfcircle {
+    box-sizing: border-box;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    border: solid 7px transparent;
+    border-top-color: #ffd166;
+    border-left-color: #ffd166;
+    border-radius: 50%;
+  }
+  
+  #clipped {
+    width: 200%;
+    animation: rotate2 .75s linear 2 forwards;
+  }
+  
+  #fixed {
+    width: 100%;
+    transform: rotate(135deg);
+    animation: showfixed 1.5s steps(2) forwards;
+  }
+  
+  @keyframes cliprotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate2 {
+    0% {
+      transform: rotate(-45deg);
+    }
+    100% {
+      transform: rotate(135deg);
+    }
+  }
+  
+  @keyframes showfixed {
+    0% {
+      opacity: 0;
+    }
+    49.9% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .image-container {
+    overflow: hidden; 
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%); 
+    }
+    50% {
+      opacity: 1; 
+    }
+    100% {
+      transform: translateX(100%); 
+      opacity: 0; 
+    }
+  }
+  
+  .image-container img {
+    animation: slideIn 6s ease-in-out forwards; 
+  }
+  
+  

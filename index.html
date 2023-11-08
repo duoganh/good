@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day</title>
+   
+</head>
+<style>
+    body, html {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+
+    p {
+        text-align: center;
+    }
+.waviy{
+    position: relative;
+    -webkit-box-reflect: below -20px  linear-gradient( transparent ,
+     rgba(0,0,0,.2));
+}
+.waviy span{
+    position: relative;
+    display: inline-block;
+    font-size: 4rem;
+    text-transform: uppercase;
+    animation: waviy 1s infinite ;
+    animation-delay: calc(.1s * var(--i));
+    
+}
+@keyframes waviy{
+    0%,
+    40%,
+    100%{
+        transform: translateY(0);
+    }
+    20%{transform: translateY(-20px);}
+}
+</style>
+<body>
+    <div class="waviy">
+        <span style="--i:1">L</span>
+        <span style="--i:2">o</span>
+        <span style="--i:3">a</span>
+        <span style="--i:4">d</span>
+        <span style="--i:5">i</span>
+        <span style="--i:6">n</span>
+        <span style="--i:7">g</span>
+        <span style="--i:8">.</span>
+        <span style="--i:9">.</span>
+        <span style="--i:10">.</span>
+    </div>
+    
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setGreeting();
+    });
+  
+    function setGreeting() {
+        var d = new Date();
+        var localTime = d.getTime();
+        var localOffset = d.getTimezoneOffset() * 60000;
+        var utc = localTime + localOffset;
+        var offset = 7; // GMT offset for your timezone
+  
+        var current = new Date(utc + (3600000 * offset));
+  
+        var hour = current.getHours();
+  
+        if (hour >= 5 && hour < 11) {
+            setTimeout(function() {
+                 window.location.href = 'index.html'; }, 2000); 
+         
+        } else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour < 2)) {
+            document.getElementById("greeting").innerText = "Chào buổi tối!";
+        } else {
+            setTimeout(function() {
+                 window.location.href = 'morning.html'; }, 2000); 
+        }
+    }
+  </script>
+<!-- <script>
+    setTimeout(function() {
+    window.location.href = 'happy.html'; }, 5000); 
+</script> -->
+</html>
