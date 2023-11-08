@@ -14,7 +14,7 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 36px;
+  font-size: 50px;
   color: white; /* Thay đổi màu sắc theo ý thích */
   z-index: 999;
 }
