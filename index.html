@@ -74,18 +74,16 @@
   
         if (hour >= 5 && hour < 11) {
             setTimeout(function() {
-                 window.location.href = 'index.html'; }, 2000); 
+                 window.location.href = 'morning.html'; }, 2000); 
          
         } else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour < 2)) {
-            document.getElementById("greeting").innerText = "Chào buổi tối!";
-        } else {
             setTimeout(function() {
-                 window.location.href = 'morning.html'; }, 2000); 
+                 window.location.href = 'night.html'; }, 2000); 
+        } else {
+            // setTimeout(function() {
+            //      window.location.href = 'morning.html'; }, 2000); 
         }
     }
   </script>
-<!-- <script>
-    setTimeout(function() {
-    window.location.href = 'happy.html'; }, 5000); 
-</script> -->
+
 </html>
