@@ -72,16 +72,16 @@
   
         var hour = current.getHours();
   
-        if (hour >= 5 && hour < 9) {
+        if (hour >= 5 && hour < 10) {
             setTimeout(function() {
-                 window.location.href = 'morning.html'; }, 3000); 
+                 window.location.href = 'morning.html'; }, 2000); 
          
         } else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour < 2)) {
             setTimeout(function() {
-                 window.location.href = 'night.html'; }, 3000); 
+                 window.location.href = 'night.html'; }, 2000); 
         } else {
             setTimeout(function() {
-                 window.location.href = 'day/happy.html'; }, 3000); 
+                 window.location.href = 'day/happy.html'; }, 2000); 
         }
     }
   </script>

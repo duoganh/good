@@ -328,13 +328,13 @@
 
       var hour = current.getHours();
 
-      if (hour >= 5 && hour < 11) {
+      if (hour >= 5 && hour < 10) {
           setTimeout(function() {
                window.location.href = '../morning.html'; }, 50); 
        
       } else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour < 2)) {
           setTimeout(function() {
-               window.location.href = '../night.html'; }, 2000); 
+               window.location.href = '../night.html'; }, 50); 
       } 
   }
 </script>
