@@ -29,7 +29,31 @@
       <div class="image-container">
         <img src="img.png" alt="description_of_your_image">
       </div>
-    
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setGreeting();
+        });
+      
+        function setGreeting() {
+            var d = new Date();
+            var localTime = d.getTime();
+            var localOffset = d.getTimezoneOffset() * 60000;
+            var utc = localTime + localOffset;
+            var offset = 7; // GMT offset for your timezone
+      
+            var current = new Date(utc + (3600000 * offset));
+      
+            var hour = current.getHours();
+      
+            if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour < 2)) {
+                setTimeout(function() {
+                     window.location.href = 'night.html'; }, 50); 
+            } else {
+                // setTimeout(function() {
+                //      window.location.href = 'morning.html'; }, 2000); 
+            }
+        }
+      </script>
       
 </body>
 </html>

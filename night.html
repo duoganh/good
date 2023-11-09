@@ -25,7 +25,32 @@
           <div class="centered-text">
             <p  class="animated-text"> Cún ngủ ngon! </p>
         </div>
-
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              setGreeting();
+          });
+        
+          function setGreeting() {
+              var d = new Date();
+              var localTime = d.getTime();
+              var localOffset = d.getTimezoneOffset() * 60000;
+              var utc = localTime + localOffset;
+              var offset = 7; // GMT offset for your timezone
+        
+              var current = new Date(utc + (3600000 * offset));
+        
+              var hour = current.getHours();
+        
+              if (hour >= 5 && hour < 10) {
+                  setTimeout(function() {
+                       window.location.href = 'morning.html'; }, 50); 
+               
+              } else {
+                  // setTimeout(function() {
+                  //      window.location.href = 'morning.html'; }, 2000); 
+              }
+          }
+        </script>
   <script type="text/javascript" src="src/js/status.js"></script>
 </body>
 </html>
