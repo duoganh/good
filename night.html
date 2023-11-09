@@ -45,7 +45,9 @@
                   setTimeout(function() {
                        window.location.href = 'morning.html'; }, 50); 
                
-              } else {
+              }else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour < 2)) {
+                
+            } else {
                 setTimeout(function() {
                  window.location.href = 'day/happy.html'; }, 50); 
               }
