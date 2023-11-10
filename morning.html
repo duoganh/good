@@ -45,14 +45,16 @@
       
             var hour = current.getHours();
       
-            if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour < 2)) {
+            if (hour >= 5 && hour < 10) {
+            
+            } else if ((hour >= 22 && hour <= 23) || (hour >= 0 && hour < 2)) {
                 setTimeout(function() {
-                     window.location.href = 'night.html'; }, 50); 
+                    window.location.href = 'night.html'; }, 50); 
             } else {
-              setTimeout(function() {
-                 window.location.href = 'day/happy.html'; }, 50);  
+                setTimeout(function() {
+                    window.location.href = 'day/happy.html'; }, 50); 
             }
-        }
+            }
       </script>
       
 </body>
